@@ -6,3 +6,5 @@ test/reports/*
 package-lock.json
 allure-report/*
 logs/*
+junit-results.html
+jsconfig.json
