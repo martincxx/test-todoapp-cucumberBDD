@@ -1,4 +1,4 @@
-@Allcompleted @Pending
+@Allcompleted
 Feature: Mark all todos as completed
 
     As a user

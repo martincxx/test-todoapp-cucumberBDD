@@ -47,10 +47,8 @@ class TodoApp extends Page {
     browser.keys(["Enter"]);
   }
 
-  createMultipleTodo(arr) {
-    arr.forEach((element) => {
-      this.createTodo(element);
-    });
+  createMultipleTodo(tasks) {
+    tasks.forEach((task) => this.createTodo(task));
   }
 
   readTodo() {
@@ -62,12 +60,20 @@ class TodoApp extends Page {
     completedTodo.$("input").click();
   }
 
+  markManyAsCompleted(todos) {
+    todos.forEach((todo) => this.markAsCompleted(todo));
+  }
+
   markAllAsCompleted() {
     this.toggleAllAsCompleted.click();
   }
 
   filterCompletedTodos() {
     this.completedFilter.click();
+  }
+
+  clearCompletedTodos() {
+    this.clearCompleted.click();
   }
 
   getItemsLeft() {

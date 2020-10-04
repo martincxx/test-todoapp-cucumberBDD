@@ -1,4 +1,4 @@
-@Create @Pending
+@Create
 Feature: Create todo
 
     As a user

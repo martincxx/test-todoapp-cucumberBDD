@@ -24,3 +24,7 @@ When(/^I change the "([^"]*)?" todo with "([^"]*)?"$/, (text, newText) => {
 When(/^I select the completed filter$/, () => {
   todoApp.filterCompletedTodos();
 });
+
+When(/^I clear completed todos$/, () => {
+  todoApp.clearCompletedTodos();
+});
