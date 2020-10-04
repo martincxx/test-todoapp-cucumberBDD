@@ -1,5 +1,6 @@
-
 ### WebdriverIO-v6 boilerplate code with Cucumber BDD
+
+Built upon Amiya Pattnaik's [webdriverIO-with-cucumberBDD]("https://github.com/amiya-pattnaik/webdriverIO-with-cucumberBDD) amazing boilerplate.
 
 This repository contains a collection of sample webdriverIO-v6 (Selenium - Node.js/JavaScript) projects and libraries that demonstrate how to use the tool and develop automation script using the Cucumber (v6.x) BDD framework. It uses the `chromedriver` NPM package that wraps the ChromeDriver for you. This service does not require a Selenium server, but uses ChromeDriver to communicate with the browser directly.
 
@@ -9,16 +10,15 @@ It support ES5 to ES8 (via babel-register) and uses Grunt to manage tasks, provi
 
 ### Installation
 
-This project is tested on **Node v12.0.0** and above.  While earlier versions of node may be compatible, but they have not been verified.
+This project is tested on **Node v12.0.0** and above. While earlier versions of node may be compatible, but they have not been verified.
 
-`Node.JS:` Install  from the site - https://nodejs.org/en/  take the LTS version based on your Operating system. Please make sure you install NodeJS globally. To take full advantage of the command line and use grunt tasks you will need to make sure that you have added `node_modules/.bin` to your `$PATH`.  Otherwise you will need to install `npm install -g  grunt-cli` globally.
-
+`Node.JS:` Install from the site - https://nodejs.org/en/ take the LTS version based on your Operating system. Please make sure you install NodeJS globally. To take full advantage of the command line and use grunt tasks you will need to make sure that you have added `node_modules/.bin` to your `$PATH`. Otherwise you will need to install `npm install -g grunt-cli` globally.
 
 `JDK 1.8:` It is optional, install JDK 1.8+ and make sure class path is set properly. JAVA is require to start `Selenium Server` on your local environment nothing else.
 
 ### Selenium, Appium
 
-To run your test you must have selenium / Appium server up and running to execute any webdriverIO tests, or it will fail fast with an error. To start selenium automatically it has been added as part of `services: ['selenium-standalone']` and `services: ['appium']` in the *.conf.js.  That's all there is to it.!.
+To run your test you must have selenium / Appium server up and running to execute any webdriverIO tests, or it will fail fast with an error. To start selenium automatically it has been added as part of `services: ['selenium-standalone']` and `services: ['appium']` in the \*.conf.js. That's all there is to it.!.
 
 ### Run Some Sample Tests
 
@@ -26,7 +26,7 @@ To execute the entire test suite in local development, you can use any one of th
 
 Option 1: `npm run test-local`. You can also run in SauceLabs and BrowserStack using `npm run test-sauce`, `npm run test-browserstack`.
 
-Option 2: `grunt webdriver:test-local`.  This executes all features in the [`./test/features/*.feature`] directory.
+Option 2: `grunt webdriver:test-local`. This executes all features in the [`./test/features/*.feature`] directory.
 The default option for Grunt run is `webdriver:test-local`. But you can use `webdriver:test-sauce` or `test-browserstack` based on your requirements.
 
 To execute tests on `mobile device` use : `npm run test-mobile`.
@@ -35,19 +35,19 @@ Note: Before running mobile tests, perform the requisite Appium setup. For hassl
 
 ### Config Files
 
-WebdriverIO uses configuration files to setup and execute tests in specific ways.  The configuration is fully customizable, and different functions can be invoked before, during and after each test or test suite.  Config files can be found in the `/test/config/` directory and all end with `*.conf.js`.  These can be called via the the cli.
+WebdriverIO uses configuration files to setup and execute tests in specific ways. The configuration is fully customizable, and different functions can be invoked before, during and after each test or test suite. Config files can be found in the `/test/config/` directory and all end with `*.conf.js`. These can be called via the the cli.
 
 ### SauceLabs/BrowserStack Integration
 
-`SauceLabs` and `BrowserStack` specific code has been added in the `wdio.sauce.conf.js` and  `wdio.browserstack.conf.js` under the /test/config folder. You just need to provide your SauceLabs/BrowserStack credentials in the config file. To run test on SauceLabs, execute command `npm run test-sauce` and on BrowserStack `npm run test-browserstack`.
+`SauceLabs` and `BrowserStack` specific code has been added in the `wdio.sauce.conf.js` and `wdio.browserstack.conf.js` under the /test/config folder. You just need to provide your SauceLabs/BrowserStack credentials in the config file. To run test on SauceLabs, execute command `npm run test-sauce` and on BrowserStack `npm run test-browserstack`.
 
-### Logs  
+### Logs
 
 Complete set of execution `logs` will be generated during the run time and can be found in the parent folder location /logs.
 
 ### Reporters
 
-WebdriverIO uses several different types of test reporters to communicate pass/failure.  
+WebdriverIO uses several different types of test reporters to communicate pass/failure.
 
 ##### Dot
 
@@ -65,7 +65,7 @@ To generate and view an allure report locally, run `npm run allure-report`. A ty
 
 ![ScreenShot](https://github.com/allure-framework/allure2/blob/master/.github/readme-img.png)
 
-Allure has several other reporting tools optimized for the CI server of your choice.  You can [view the documentation here](http://wiki.qatools.ru/display/AL/Reporting).
+Allure has several other reporting tools optimized for the CI server of your choice. You can [view the documentation here](http://wiki.qatools.ru/display/AL/Reporting).
 
 ##### junit/xunit
 
@@ -90,6 +90,7 @@ Refer complete [WebdriverIO v6 API](https://webdriver.io/docs/api.html) methods 
 Tests are written in the Cucumber framework using the Gherkin Syntax. More about Gherkin & Cucumber can be found at https://cucumber.io/docs/reference
 
 Tests are place in `*.feature` files in the `/test/features/` directory. A typical test will look similar to this:
+
 ```
 Feature: Performing a Yahoo Search
 
@@ -119,13 +120,13 @@ Feature: Performing a Yahoo Search
 
 ### The Page Object Design Pattern
 
-Within your web app's UI there are areas that your tests interact with. A Page Object simply models these as objects within the test code. This reduces the amount of duplicated code and means that if the UI changes, the fix need only be applied in one place. In other wards one of the challenges of writing test automation is keeping your [selectors] (classes, id's, or xpath' etc.) up to date with the latest version of your code.  The next challenge is to keep the code you write nice and DRY (Don't Repeat Yourself).  The page object pattern helps us accomplish this in one solution.  Instead of including our selectors in our step definitions in cucumber, we instead place them in a `<pagename>.js` file where we can manage all these selectors and methods together. Your test file should only call the test methods.
+Within your web app's UI there are areas that your tests interact with. A Page Object simply models these as objects within the test code. This reduces the amount of duplicated code and means that if the UI changes, the fix need only be applied in one place. In other wards one of the challenges of writing test automation is keeping your [selectors] (classes, id's, or xpath' etc.) up to date with the latest version of your code. The next challenge is to keep the code you write nice and DRY (Don't Repeat Yourself). The page object pattern helps us accomplish this in one solution. Instead of including our selectors in our step definitions in cucumber, we instead place them in a `<pagename>.js` file where we can manage all these selectors and methods together. Your test file should only call the test methods.
 
-You can also place reusable functions or logic inside of these pages and call them from your step files. The page object serves as a layer of abstraction between tests and code.  When a test fails, it fails on a individual step.  That step may call a selector that is no longer valid, but that selector may be used by many other steps.  By having a single source of truth of what the selector is supposed to be, fixing one selector on the page object could repair a number of failing tests that were affected by the same selector.
+You can also place reusable functions or logic inside of these pages and call them from your step files. The page object serves as a layer of abstraction between tests and code. When a test fails, it fails on a individual step. That step may call a selector that is no longer valid, but that selector may be used by many other steps. By having a single source of truth of what the selector is supposed to be, fixing one selector on the page object could repair a number of failing tests that were affected by the same selector.
 
-An object called `Page` will be created with the prototype model or by ES6 class pattern.  This ensures that every instance of a page object is exported as a stateless construct. Any any changes to that state are handled in the browser, rather than on the server.
+An object called `Page` will be created with the prototype model or by ES6 class pattern. This ensures that every instance of a page object is exported as a stateless construct. Any any changes to that state are handled in the browser, rather than on the server.
 
-It is preferable to separate page objects into individual files that end with `.page.js`.  These will require the basic `page.js` prototype construct / abstract class and create new objects for each individual page.
+It is preferable to separate page objects into individual files that end with `.page.js`. These will require the basic `page.js` prototype construct / abstract class and create new objects for each individual page.
 
 For more information on the implementation of `Page Object Design Pattern`, refer to the `/test/pageobjects` directory. A typical page class using ES6 syntax will look similar to this:
 
@@ -168,6 +169,7 @@ export default new LoginPage()
 ### Working with DataBase
 
 A relational database is, simply, a database that stores related information across multiple tables and allows you to query information in more than one table at the same time. Your application under test displays data from these database. So when you are actually performing automation testing it is very likely that you need to verify the data between actual (which you got it from browser) Vs expected (which you will get it from the database by executing SQL statements on database). This can be done by below statements in your code.
+
 ```
 //example of connection to Oracle DataBase
 
@@ -191,6 +193,7 @@ db.execute(cogfig, sql, function(results){
 });
 
 ```
+
 For trouble shooting and more information, please visit `node-any-jdbc` module which can be found [here](https://www.npmjs.com/package/node-any-jdbc)
 
 Note: `node-any-jdbc` is NOT packaged under this project. If you need, you can install it as a separate npm module `npm install node-any-jdbc --save` and start using it right away.
@@ -198,7 +201,7 @@ You can also find sample examples under /util-examples/database-example.js
 
 ### Working with Excel File
 
-You can use `MS-Excel / OpenOffice` Excel files and store your test data, expected data in an excel sheet. you can keep any number of excel sheets you want and use below common methods to pull data from your sheet to be use as part of testing.  Please note it only support `.xlsx` file format. For more information refer to the `common-utilities.js` and `util-examples`
+You can use `MS-Excel / OpenOffice` Excel files and store your test data, expected data in an excel sheet. you can keep any number of excel sheets you want and use below common methods to pull data from your sheet to be use as part of testing. Please note it only support `.xlsx` file format. For more information refer to the `common-utilities.js` and `util-examples`
 
 ```
 //example of pulling data from MS-Excel
@@ -237,7 +240,6 @@ Create a fork of the project into your own repository. Make all your necessary c
 ### History
 
 Industry is moving towards Node.js / JavaScript, Angularjs, Full-Stack world. WebdriverIO, a JavaScript binding wrapper for Selenium Webdriver, was originated by Camilo Tapia's initial Selenium project called WebdriverJS, which was the first Webdriver project on NPM. In 2014, the project was renamed WebdriverIO later on. This repository is a pre-configured version of webdriverIO meant to jump-start the process of writing new test automation or adding test automation to existing node.js applications.
-
 
 ### Licensing
 
