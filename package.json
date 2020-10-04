@@ -1,6 +1,6 @@
 {
   "name": "test-todoapp-cucumberBDD",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Functional testing of a Todo App with Cucumber",
   "author": "Martin Coronel <martincxx@gmail.com>",
   "license": "MIT",

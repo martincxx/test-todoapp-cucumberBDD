@@ -1,18 +1,26 @@
-import {Given, When, Then} from 'cucumber';
-import loginPage from '../pageobjects/herokuapp-login.page';
-import yahooPage from '../pageobjects/yahoo-search.page';
+import { When } from "cucumber";
+import todoApp from "../pageobjects/todoApp";
 
-
-When(/^I enter "([^"]*)" into the search box$/, function (arg1) {
-    yahooPage.enterText(arg1);
-    yahooPage.searchInput.getValue().should.equal(arg1);
+When(/^I add a "([^"]*)?" todo$/, (todo) => {
+  todoApp.createTodo(todo);
 });
 
-When(/^I click the search button$/, function () {
-    yahooPage.search();
+When(/^I mark the "([^"]*)?" todo as completed$/, (todo) => {
+  todoApp.markAsCompleted(todo);
 });
 
-// *** belongs to ta-loging  feature
-When(/^I login with username and password "([^"]*)" "([^"]*)" into the text box$/, function (arg1, arg2) {
-    loginPage.login(arg1, arg2);    // entering user name, password and and submiting the page
+When(/^I mark all todos as completed$/, () => {
+  todoApp.markAllAsCompleted();
+});
+
+When(/^I delete the "([^"]*)?" todo$/, (todo) => {
+  todoApp.deleteTodo(todo);
+});
+
+When(/^I change the "([^"]*)?" todo with "([^"]*)?"$/, (text, newText) => {
+  todoApp.editTodo(text, newText);
+});
+
+When(/^I select the completed filter$/, () => {
+  todoApp.filterCompletedTodos();
 });
