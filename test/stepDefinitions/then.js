@@ -1,26 +1,12 @@
-import { Then } from "cucumber";
-import todoApp from "../pageobjects/todoApp";
+import { Then }     from 'cucumber';
+import landingPage  from '../pageobjects/herokuapp-landing.page';
+import yahooPage    from '../pageobjects/yahoo-search.page';
 
-Then(/^An item with the text "([^"]*)?" is shown on the list$/, (text) => {
-  todoApp.readTodo().should.equal(text);
+Then(/^I should see a list of search results$/, function () {
+  yahooPage.isSearched().should.be.true;
 });
 
-Then(/^"([^"]*)?" is shown on the list as "([^"]*)?"$/, (todo, status) => {
-  todoApp.getTodoStatus(todo).should.equal(status);
-});
-
-Then(/^there are no items let to complete$/, () => {
-  todoApp.getItemsLeft().should.equal(0);
-});
-
-Then(/^the todo "([^"]*)?" is no longer existing$/, (text) => {
-  todoApp.findTodo(text).should.be.false;
-});
-
-Then(/^the todo text should be replaced with "([^"]*)?"$/, (text) => {
-  todoApp.getTodoByText(text).getText().trim().should.equal(text);
-});
-
-Then(/^no "([^"]*)?" todos are shown$/, (filter) => {
-  todoApp.checkFilteredItems(filter).should.be.false;
+// *** belongs to ta-loging  feature
+Then(/^I should see the message "([^"]*)" on the landing page$/, function (message) {
+  landingPage.getMessage().should.equal(message);
 });

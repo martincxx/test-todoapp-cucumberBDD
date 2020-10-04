@@ -1,7 +1,6 @@
 const path = require('path');
 const defaultTimeoutInterval = process.env.DEBUG ? (60 * 60 * 500) : 90000;
 
-
 exports.config = {
     //
     // ====================
@@ -76,7 +75,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://todomvc.com/examples/',
+    baseUrl: 'http://the-internet.herokuapp.com',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -147,7 +146,7 @@ exports.config = {
         source: false,      // <boolean> hide source uris
         profile: [],        // <string[]> (name) specify the profile to use
         strict: true,       // <boolean> fail if there are any undefined or pending steps
-        tagExpression: 'not @Pending',      // <string> (expression) only execute the features or scenarios with tags matching the expression, see https://cucumber.io/docs/cucumber/api/#running-a-subset-of-scenarios
+        tagExpression: 'not @Pending',      // <string> (expression) only execute the features or scenarios with tags matching the expression, see https://docs.cucumber.io/tag-expressions/
         timeout: defaultTimeoutInterval,    // <number> timeout for step definitions
         tagsInTitle: false,                 // <boolean> add cucumber tags to feature or scenario name
         snippetSyntax: undefined,           // <string> specify a custom snippet syntax
@@ -206,8 +205,8 @@ exports.config = {
      * Hook that gets executed before the suite starts
      * @param {Object} suite suite details
      */
-      //beforeSuite: function (suite) {
-      //},
+    // beforeSuite: function (suite) {
+    // },
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
