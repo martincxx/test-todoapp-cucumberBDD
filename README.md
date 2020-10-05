@@ -1,12 +1,10 @@
-### WebdriverIO-v6 boilerplate code with Cucumber BDD
+### Testing a React todo app with Webdriverio-v6 and Cucumber
 
-Built upon Amiya Pattnaik's [webdriverIO-with-cucumberBDD]("https://github.com/amiya-pattnaik/webdriverIO-with-cucumberBDD) amazing boilerplate.
+Built upon Amiya Pattnaik's [webdriverIO-with-cucumberBDD](https://github.com/amiya-pattnaik/webdriverIO-with-cucumberBDD) amazing boilerplate.
 
-This repository contains a collection of sample webdriverIO-v6 (Selenium - Node.js/JavaScript) projects and libraries that demonstrate how to use the tool and develop automation script using the Cucumber (v6.x) BDD framework. It uses the `chromedriver` NPM package that wraps the ChromeDriver for you. This service does not require a Selenium server, but uses ChromeDriver to communicate with the browser directly.
+Which is usually the standard way of learning a new frontend framework? Building a **Todo App**. So this repository contains the implementation of automated test for a simple todo App built with [React](https://reactjs.org/). WebdriverIO-v6 (Selenium - Node.js/JavaScript) allows us to demonstrate how to use the tool and develop an automation suite using the Cucumber (v6.x) BDD framework. It uses the `chromedriver` NPM package that wraps the ChromeDriver for you. This service does not require a Selenium server, but uses ChromeDriver to communicate with the browser directly.
 
 It support ES5 to ES8 (via babel-register) and uses Grunt to manage tasks, provides utilities to read data from MS-Excel, executes SQL statements to any database for end to end testing. It generate Spec, JUNIT, Allure, JSON reporters as well.
-
-💡 If you need the wdio-v5 boilerplate project, please take the code from v5 branch: click [here](https://github.com/amiya-pattnaik/webdriverIO-with-cucumberBDD/tree/wdio-v5)
 
 ### Installation
 
@@ -29,9 +27,11 @@ Option 1: `npm run test-local`. You can also run in SauceLabs and BrowserStack u
 Option 2: `grunt webdriver:test-local`. This executes all features in the [`./test/features/*.feature`] directory.
 The default option for Grunt run is `webdriver:test-local`. But you can use `webdriver:test-sauce` or `test-browserstack` based on your requirements.
 
+During development you may want to execute only just one feature. If that is the case, it can be achieved by using tag expressions. For example, if you want to execute only the _useFilters_ feature you should run `npm run test-local -- --cucumberOpts.tagExpression="@Filters"` . For further details see https://cucumber.io/docs/cucumber/api/#running-a-subset-of-scenarios
+
 To execute tests on `mobile device` use : `npm run test-mobile`.
 
-Note: Before running mobile tests, perform the requisite Appium setup. For hassle free Appium setup on OSX refer [appium-setup-made-easy-OSX](https://github.com/amiya-pattnaik/appium-setup-made-easy-OSX) OR refer [Appium Docs](http://appium.io/getting-started.html?lang=en)
+Note: Before running mobile tests, perform the requisite Appium setup. For hassle free Appium setup on OSX refer [appium-setup-made-easy-OSX](https://github.com/amiya-pattnaik/appium-setup-made-easy-OSX), for Android please check [here](https://atasteofdottech.wordpress.com/2019/11/12/the-appium-boilerplate/) OR refer [Appium Docs](http://appium.io/docs/en/about-appium/getting-started/?lang=en)
 
 ### Config Files
 
