@@ -1,4 +1,4 @@
-@Edit
+@EditTodo
 Feature: Edit todo
 
     As a user

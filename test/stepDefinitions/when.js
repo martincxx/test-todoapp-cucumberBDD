@@ -25,6 +25,10 @@ When(/^I select the completed filter$/, () => {
   todoApp.filterCompletedTodos();
 });
 
+When(/^I select the active filter$/, () => {
+  todoApp.filterActiveTodos();
+});
+
 When(/^I clear completed todos$/, () => {
   todoApp.clearCompletedTodos();
 });

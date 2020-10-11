@@ -1,27 +1,28 @@
-const { config } = require('./wdio.shared.conf')
+const { config } = require("./wdio.shared.conf");
 
 exports.config = {
-    ...config,
-    ...{
-      host: '0.0.0.0',
-      port: 4723,
-      //path: '/wd/hub',
-      services: [
-        ['appium',
-            {
-            // For options see
+  ...config,
+  ...{
+    host: "0.0.0.0",
+    port: 4723,
+    //path: "/wd/hub",
+    services: [
+      [
+        "appium",
+        {
+          // For options see
+          // https://github.com/webdriverio/webdriverio/tree/master/packages/wdio-appium-service
+          args: {
+            // For arguments see
             // https://github.com/webdriverio/webdriverio/tree/master/packages/wdio-appium-service
-                args: {
-                // For arguments see
-                // https://github.com/webdriverio/webdriverio/tree/master/packages/wdio-appium-service
-                },
-                command: 'appium',
-            },
-        ],
+          },
+          command: "appium",
+        },
       ],
+    ],
 
-      // For iOS bases mobile device
-      capabilities: [{
+    // For iOS bases mobile device
+    /*capabilities: [{
           appiumVersion: '1.6.5',
           automationName: 'XCUITest',
           platformName: 'iOS',
@@ -35,17 +36,25 @@ exports.config = {
           clearSystemFiles: true,
           //commandTimeout: '7200',
           //app: APP_PATH
-      }],
+      }],*/
 
-        // // For Android bases mobile device
-        // capabilities: [{
-        //     appiumVersion: '1.6.5',
-        //     automationName: 'Appium',
-        //     platformName: 'Android',
-        //     //platformVersion: '9.0',
-        //     deviceName: 'Android Emulator',
+    // // For Android bases mobile device
+    capabilities: [
+      {
+        appiumVersion: "1.15.1",
+        automationName: "Appium",
+        platformName: "Android",
+        platformVersion: "10.0",
+        deviceName: "Pixel 2 Android 10",
+        maxInstances: 1, //added
         //     //deviceName: 'iPhone 6s',
-        //     browserName: 'chrome',
+        browserName: "chrome",
+        //appiumVersion: "1.6.5",
+        //automationName: "Appium",
+        //platformName: "Android",
+        //platformVersion: "10.0",
+        //     deviceName: 'Android Emulator',
+        //browserName: "chrome",
         //     // chromeOptions: {
         //     //   androidPackage: 'com.android.chrome',
         //     // },
@@ -54,7 +63,7 @@ exports.config = {
         //     //orientation: 'PORTRAIT',
         //     //nativeInstrumentsLib: true,
         //     //isolateSimDevice: true,
-        //     //clearSystemFiles: true,
+        clearSystemFiles: true,
         //     //app: APP_PATH
         //     commandTimeout: '7200',
         //     noReset: false,
@@ -67,6 +76,7 @@ exports.config = {
         //     noSign: true,
         //     // intentCategory: 'android.intent.category.APP_CONTACTS',
         //     // intentAction: 'android.intent.action.MAIN',
-        // }],
-    }
+      },
+    ],
+  },
 };

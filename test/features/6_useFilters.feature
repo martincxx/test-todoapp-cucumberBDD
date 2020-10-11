@@ -1,4 +1,4 @@
-@Filters
+@UseFilters
 Feature: Use filters
 
     As a user
@@ -9,12 +9,14 @@ Feature: Use filters
         Given I am on the app
         When I mark the "Do the dishes" todo as completed
 
+    @OnlyCompleted
     Scenario: 1 Show only completed todos
 
         When I select the completed filter
         Then no "active" todos are shown
 
+    @OnlyActive
     Scenario: 2 Show only active todos
 
-        When I select the completed filter
+        When I select the active filter
         Then no "completed" todos are shown

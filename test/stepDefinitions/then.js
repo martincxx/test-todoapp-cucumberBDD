@@ -1,5 +1,6 @@
 import { Then } from "cucumber";
 import todoApp from "../pageobjects/todoApp";
+import { TODO_ARRAY } from  "../../utilities/constants"
 
 Then(/^An item with the text "([^"]*)?" is shown on the list$/, (text) => {
   todoApp.readTodo().should.equal(text);
@@ -23,4 +24,14 @@ Then(/^the todo text should be replaced with "([^"]*)?"$/, (text) => {
 
 Then(/^no "([^"]*)?" todos are shown$/, (filter) => {
   todoApp.checkFilteredItems(filter).should.be.false;
+});
+
+Then(/^the number of items is incremented by 1$/, () => {
+  const todoNumber = TODO_ARRAY.length + 1
+  todoApp.getItemsLeft().should.equal(todoNumber);
+});
+
+Then(/^the number of items is decreased by 1$/, () => {
+  const todoNumber = TODO_ARRAY.length - 1
+  todoApp.getItemsLeft().should.equal(todoNumber);
 });
