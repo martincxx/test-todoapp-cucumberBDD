@@ -13,6 +13,7 @@
     "test-sauce": "wdio ./test/config/wdio.sauce.conf.js",
     "test-browserstack": "wdio ./test/config/wdio.browserstack.conf.js",
     "test-local": "npm run allure:history && wdio ./test/config/wdio.local.conf.js",
+    "test-local-headless": "npm run allure:history && wdio ./test/config/wdio.headless.local.conf.js",
     "test-mobile": "wdio ./test/config/wdio.appium.conf.js"
   },
   "keywords": [

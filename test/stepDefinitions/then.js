@@ -26,7 +26,7 @@ Then(/^no "([^"]*)?" todos are shown$/, (filter) => {
   todoApp.checkFilteredItems(filter).should.be.false;
 });
 
-Then(/^the number of items is incremented by 1$/, () => {
+Then(/^the number of items is increased by 1$/, () => {
   const todoNumber = TODO_ARRAY.length + 1
   todoApp.getItemsLeft().should.equal(todoNumber);
 });

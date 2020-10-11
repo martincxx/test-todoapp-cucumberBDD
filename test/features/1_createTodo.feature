@@ -9,4 +9,4 @@ Feature: Create todo
         Given I am on the app
         When I add a "Buy license" todo
         Then An item with the text "Buy license" is shown on the list
-        And the number of items is decreased by 1
+        And the number of items is increased by 1
