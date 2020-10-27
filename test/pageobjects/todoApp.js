@@ -68,7 +68,7 @@ class TodoApp extends Page {
     this.toggleAllAsCompleted.click();
   }
 
-  filterActiveTodos(){
+  filterActiveTodos() {
     this.activeFilter.click();
   }
   filterCompletedTodos() {
